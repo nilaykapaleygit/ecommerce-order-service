@@ -30,7 +30,7 @@ public class EcomOrderPayments {
 	    @Column(name = "transaction_id", length = 100)
 	    private String transactionId;
 
-	    @Column(name = "amount", nullable = false, precision = 12, scale = 2)
+	    @Column(name = "amount", nullable = false)
 	    private BigDecimal amount;
 
 	    @Column(name = "created_at")

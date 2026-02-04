@@ -9,7 +9,7 @@ import com.ecommerce.order_service.dto.EcomCartDto;
 @FeignClient(name="cart-service")
 public interface CartFeignClient {
 
-    @GetMapping("/{userId}")
+    @GetMapping("/cart/getCartByUser/{userId}")
     public EcomCartDto getCartByUser(@PathVariable Long userId);
     
 }

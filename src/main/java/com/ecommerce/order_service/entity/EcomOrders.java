@@ -30,7 +30,7 @@ public class EcomOrders {
     @Column(name = "order_status", nullable = false, length = 30)
     private String orderStatus;
 
-    @Column(name = "total_amount", nullable = false, precision = 12, scale = 2)
+    @Column(name = "total_amount", nullable = false)
     private Double totalAmount;
 
     @Column(name = "currency", length = 10)

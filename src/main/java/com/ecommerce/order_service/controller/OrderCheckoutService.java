@@ -38,7 +38,7 @@ public class OrderCheckoutService {
 
 		public EcomOrderDto checkout(EcomOrderDto ecomOrderDto, Long cartId) {
 
-			EcomCartDto cart = cartFeignClient.getCartByUser(cartId);
+			EcomCartDto cart = cartFeignClient.getCartByUser(ecomOrderDto.getUserId());
 
 			if (cart == null || cart.getCartItems().isEmpty()) {
 				throw new RuntimeException("Cart is empty or invalid");
@@ -75,6 +75,7 @@ public class OrderCheckoutService {
 			order.setOrderItems(orderItems);
 
 			order = ecomOrderRepo.save(order);
+			
 			return EcomOrderMapper.mapToEcomOrderDto(order);
 		}    
 
